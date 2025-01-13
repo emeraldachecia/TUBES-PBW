@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<!-- Hubungkan dengan file CSS -->
+		<link rel="stylesheet" type="text/css" href="/css/signup.css" />
+	</head>
+	<body>
+		<section>
+			
+		</section>
+		<div class="signup-container">
+			<h1>Sign Up</h1>
+			<form action="/user/signup" method="post">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required />
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required />
+
+				<button type="submit">Sign Up</button>
+			</form>
+			<p>Already have an account? <a href="/user/signin">Sign In</a></p>
+		</div>
+	</body>
+</html>

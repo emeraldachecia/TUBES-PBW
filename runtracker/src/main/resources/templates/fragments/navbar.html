@@ -1,0 +1,37 @@
+<div class="navbar" th:fragment="navbar">
+	<nav>
+		<div class="title-content">
+			<div class="brand">
+				<h3><a href="/home">TrackFusion</a></h3>
+			</div>
+		</div>
+		<div class="nav-content">
+			<ul>
+				<li th:if="${page == 'home'}"><a href="#" id="about-us-button">About Us</a></li>
+				<li th:if="${page == 'home'}"><a href="/user/signin">Login</a></li>
+			</ul>
+			<ul>
+				<!-- Jika halaman bukan home -->
+				<li th:unless="${page == 'home'}"><a href="/dashboard">Dashboard</a></li>
+				<li th:unless="${page == 'home'}"><a href="/activity">Activity</a></li>
+				<li th:unless="${page == 'home'}"><a href="/race">Race</a></li>
+				<li th:unless="${page == 'home'}"><a href="/user/profile">Profile</a></li>
+			</ul>
+		</div>
+
+		<div id="about-us-modal" class="modal">
+			<div class="modal-content">
+				<span class="close-button">&times;</span>
+				<h2>About TrackFusion</h2>
+				<p>
+					TrackFusion is a cutting-edge web application designed for runners who want to track their activities
+					effortlessly and effectively.
+					Available 24/7, this platform provides real-time insights into your running performance, helping you stay
+					motivated and achieve your goals.
+					Whether you're a casual jogger or a professional athlete, TrackFusion offers seamless activity monitoring
+					that ensures you never miss a beat.
+				</p>
+			</div>
+		</div>
+	</nav>
+</div>

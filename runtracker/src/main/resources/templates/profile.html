@@ -1,0 +1,66 @@
+<main>
+	<div class="profile-container">
+		<h1>Profile</h1>
+		<p>
+			<strong>Name:</strong>
+			<span id="profile-name" th:text="${user.name}">John Doe</span>
+		</p>
+		<p>
+			<strong>Email:</strong>
+			<span id="profile-email" th:text="${user.email}">johndoe@gmail.com</span>
+		</p>
+		<div class="button-group">
+			<button id="edit-button">Edit</button>
+			<button id="delete-button">Delete Account</button>
+			<button id="logout-button">Log Out</button>
+		</div>
+	</div>
+
+	<div id="popup-form" class="popup">
+		<div class="popup-content">
+			<h2>Edit Profile</h2>
+			<form
+				id="edit-form"
+				action="/path-to-update-profile-endpoint"
+				method="POST">
+				<label for="name">Name:</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					th:value="${user.name}"
+					required />
+
+				<label for="email">Email:</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					th:value="${user.email}"
+					required />
+
+				<label for="current-password">Current Password:</label>
+				<input
+					type="password"
+					id="current-password"
+					name="current-password"
+					required />
+
+				<label for="new-password">New Password:</label>
+				<input type="password" id="new-password" name="new-password" required />
+
+				<label for="confirm-password">Confirm New Password:</label>
+				<input
+					type="password"
+					id="confirm-password"
+					name="confirm-password"
+					required />
+
+				<div class="button-group">
+					<button type="submit" id="save-changes">Save Changes</button>
+					<button type="button" id="cancel">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>

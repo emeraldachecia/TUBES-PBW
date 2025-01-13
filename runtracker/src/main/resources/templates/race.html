@@ -1,0 +1,50 @@
+<main>
+	<div class="container">
+		<h1>Race Page</h1>
+		<div class="tabs">
+			<button id="upcomingTab" class="active">Upcoming Race</button>
+			<button id="historyTab">History Race</button>
+		</div>
+		<table id="raceTable">
+			<thead>
+				<tr>
+					<th>Nama Race</th>
+					<th>Tanggal</th>
+					<th>Lokasi</th>
+					<th>Detail</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="race : ${races}">
+					<td th:text="${race.name}"></td>
+					<td th:text="${#dates.format(race.createdAt, 'dd-MM-yyyy')}"></td>
+					<td th:text="${race.location}"></td>
+					<td><button id="detailBtn">Detail</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Modal untuk upcoming race -->
+	<div id="raceModal" class="modal">
+		<div class="modal-content">
+			<span id="closeModal" class="close">&times;</span>
+			<h2>Detail Race</h2>
+			<p><strong>Nama Race:</strong> <span id="raceName"></span></p>
+			<p><strong>Tanggal:</strong> <span id="raceDate"></span></p>
+			<p><strong>Lokasi:</strong> <span id="raceLocation"></span></p>
+			<p id="raceDescriptionSection" style="display: none;"><strong>Deskripsi:</strong> <span
+					id="raceDescription"></span></p>
+			<p id="raceDetailsSection" style="display: none;">
+				<strong>Jarak Tempuh:</strong> <span id="raceDistance"></span> km<br>
+				<strong>Waktu Tempuh:</strong> <span id="raceTime"></span> jam<br>
+				<strong>Peringkat:</strong> <span id="raceRank"></span><br>
+				<strong>Top 5 Runners:</strong>
+			<ul id="topRunners"></ul>
+			</p>
+			<div class="modal-buttons">
+				<button id="registerButton" class="button-register" style="display: none;">Daftar Race</button>
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,25 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
+}
+
+:root {
+	--bg-color: #1f1f21;
+	--text-color: #fff;
+	--main-color: #ffae00;
+
+	--big-font: 7rem;
+	--p-font: 1.1rem;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: var(--bg-color);
+	color: var(--text-color);
+	overflow-x: hidden;
+}

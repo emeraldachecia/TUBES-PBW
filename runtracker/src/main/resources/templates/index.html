@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${title}">Default Title</title>
+		<link rel="stylesheet" th:href="@{/css/index.css}" />
+		<link rel="stylesheet" th:href="@{/css/navbar.css}" />
+		<link rel="stylesheet" th:href="@{/css/__${page}__.css}" />
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div th:insert="~{fragments/navbar :: navbar}"></div>
+
+		<!-- Main Content -->
+		<main th:insert="~{${page}}"></main>
+
+		<!-- Scripts -->
+		<script th:src="@{/js/navbar.js}" defer></script>
+		<script th:src="@{/js/__${page}__.js}" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</body>
+</html>

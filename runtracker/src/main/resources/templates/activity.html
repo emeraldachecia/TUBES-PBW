@@ -1,0 +1,114 @@
+<main>
+	<div class="container">
+		<header>
+			<h1>Activity Tracker</h1>
+			<button id="addActivityBtn" aria-label="Add new activity">
+				Add New Activity
+			</button>
+		</header>
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Duration</th>
+					<th>Distance</th>
+					<th>Type</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody id="activityList">
+				<tr th:each="activity : ${activities}">
+					<td th:text="${activity.title}"></td>
+					<td th:text="${activity.date}"></td>
+					<td th:text="${activity.duration}"></td>
+					<td th:text="${activity.distance}"></td>
+					<td th:text="${activity.type}"></td>
+					<td>
+						<button class="detailBtn" data-activity-id="${activity.id}">
+							Detail
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Pagination -->
+		<div class="pagination">
+			<button id="prevPage" disabled aria-label="Previous page">Previous</button>
+			<span id="pageInfo">Page 1 of 1</span>
+			<button id="nextPage" disabled aria-label="Next page">Next</button>
+		</div>
+	</div>
+
+	<!-- Add Activity Modal -->
+	<div class="modal" id="activityFormPopup" style="display: none">
+		<div class="modal-content">
+			<form id="add-activityForm" method="POST" action="/activity" enctype="multipart/form-data">
+				<label for="add-title">Title</label>
+				<input type="text" id="add-title" name="title" required aria-label="Activity title" />
+
+				<label for="add-date">Date</label>
+				<input type="date" id="add-date" name="date" required aria-label="Activity date" />
+
+				<label for="add-description">Description</label>
+				<textarea id="add-description" name="description" required aria-label="Activity description"></textarea>
+
+				<label for="add-time">Duration (hours)</label>
+				<input type="number" id="add-time" name="duration" required aria-label="Activity duration in hours" />
+
+				<label for="add-distance">Distance (km)</label>
+				<input type="number" id="add-distance" name="distance" required
+					aria-label="Activity distance in kilometers" />
+
+				<label for="add-image">Image</label>
+				<input type="file" id="add-image" name="fileImage" required aria-label="Activity image" />
+
+				<div id="add-raceDetails" style="display: none">
+					<label for="add-raceName">Race Name</label>
+					<input type="text" id="add-raceName" name="raceName" aria-label="Race name" />
+
+					<label for="add-rank">Rank</label>
+					<input type="number" id="add-rank" name="rank" aria-label="Race rank" />
+				</div>
+
+				<button type="submit" id="saveActivity">Save</button>
+				<button type="button" id="cancelActivity">Cancel</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Detail Modal -->
+	<div class="modal" id="activityDetailPopup" style="display: none">
+		<div class="modal-content">
+			<form id="detail-activityForm">
+				<label for="detail-title">Title</label>
+				<input type="text" id="detail-title" required aria-label="Activity title" />
+
+				<label for="detail-date">Date</label>
+				<input type="date" id="detail-date" required aria-label="Activity date" />
+
+				<label for="detail-description">Description</label>
+				<textarea id="detail-description" required aria-label="Activity description"></textarea>
+
+				<label for="detail-time">Duration (hours)</label>
+				<input type="number" id="detail-time" required aria-label="Activity duration in hours" />
+
+				<label for="detail-distance">Distance (km)</label>
+				<input type="number" id="detail-distance" required aria-label="Activity distance in kilometers" />
+
+				<div id="detail-raceDetails" style="display: none">
+					<label for="detail-raceName">Race Name</label>
+					<input type="text" id="detail-raceName" aria-label="Race name" />
+
+					<label for="detail-rank">Rank</label>
+					<input type="number" id="detail-rank" aria-label="Race rank" />
+				</div>
+
+				<button type="button" id="deleteDetailActivity">Delete</button>
+				<button type="submit" id="saveDetailActivity">Save</button>
+				<button type="button" id="cancelDetailActivity">Cancel</button>
+			</form>
+		</div>
+	</div>
+</main>

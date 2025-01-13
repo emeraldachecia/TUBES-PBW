@@ -1,0 +1,30 @@
+<main>
+    <div class="admin-dashboard">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+        </div>
+    
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Member Terdaftar</h3>
+                <p id="totalMembers">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Race yang Dilaksanakan</h3>
+                <p id="completedRaces">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Race yang Akan Dilaksanakan</h3>
+                <p id="upcomingRaces">0</p>
+            </div>
+        </div>
+    
+        <div class="chart-section">
+            <h3>Member yang Mengikuti Race per Tahun</h3>
+            <select id="yearSelector">
+                <!-- Opsi tahun akan diisi oleh JavaScript -->
+            </select>
+            <canvas id="raceChart"></canvas>
+        </div>
+    </div>
+</main>

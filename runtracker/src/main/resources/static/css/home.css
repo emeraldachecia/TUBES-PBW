@@ -1,0 +1,115 @@
+section {
+    padding: 0 15%;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    animation: slideShow 15s infinite;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide:nth-child(1) {
+    animation: fade 15s infinite 0s;
+}
+
+.slide:nth-child(2) {
+    animation: fade 15s infinite 5s;
+}
+
+.slide:nth-child(3) {
+    animation: fade 15s infinite 10s;
+}
+
+@keyframes fade {
+
+    0%,
+    33.33% {
+        opacity: 1;
+    }
+
+    66.66%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.home-text {
+    position: relative;
+    z-index: 1;
+    color: black;
+}
+
+.home-text span {
+    padding: 5px 25px;
+    background: linear-gradient(130.08deg, #383528 0%, #191919 100%);
+    box-shadow: 0px 20px 40px #00000070;
+    border: 1px solid #3b3b3b;
+    border-radius: 100px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    margin: 23px 0;
+}
+
+.home-text p {
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: white;
+    line-height: 30px;
+    margin-bottom: 30px;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0px 0px 5px #000;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: var(--main-color);
+    color: #fff;
+    border: 2px solid var(--main-color);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.6s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: transparent;
+    color: var(--main-color);
+}

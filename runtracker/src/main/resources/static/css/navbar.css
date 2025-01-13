@@ -1,0 +1,146 @@
+/* CSS for navbar */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: #ffcc00;
+	padding: 10px 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title-content {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.title-content .brand h3 {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.title-content .brand a {
+	text-decoration: none;
+	color: #343a40;
+}
+
+.title-content .brand a:hover {
+	color: white;
+}
+
+.nav-content {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 20px;
+}
+
+.nav-content ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-content ul li {
+	margin: 0 10px;
+}
+
+.nav-content ul li a {
+	text-decoration: none;
+	color: black;
+	font-size: 1rem;
+	transition: color 0.3s ease;
+}
+
+.nav-content ul li a:hover {
+	color: white;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* Warna gelap dengan transparansi */
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	animation: fadeIn 0.5s ease-in-out;
+	/* Animasi fade-in */
+}
+
+.modal-content {
+	background: linear-gradient(145deg, #ffffff, #e6e6e6);
+	/* Gradien modern */
+	padding: 30px;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+	/* Shadow untuk efek 3D */
+	max-width: 600px;
+	width: 90%;
+	/* Responsif */
+	animation: scaleIn 0.3s ease-in-out;
+	/* Animasi scale-in */
+}
+
+.modal-content h2 {
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 15px;
+}
+
+.modal-content p {
+	font-size: 16px;
+	color: #666;
+	line-height: 1.6;
+}
+
+.close-button {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #555;
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.close-button:hover {
+	color: #000;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0.8);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
